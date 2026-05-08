@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Configurações com dados sensíveis
+config.xml
+
+# Resultados (mantém a pasta mas ignora os CSVs)
+resultados/*.csv
+!resultados/.gitkeep
+
+# Ambientes virtuais
+venv/
+.env
+.venv/
+env/
+ENV/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
