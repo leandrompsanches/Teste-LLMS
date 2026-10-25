@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <api_keys>
+        <openai></openai>
+        <google>/google>
+    </api_keys>
+    <models>
+        <openai>gpt-5.4-mini</openai>
+        <gemini>gemini-2.5-flash</gemini>
+    </models>
+    <execution>
+        <selected_ai>openai</selected_ai>
+        <rate_limit_delay>30</rate_limit_delay>
+    </execution>
+    <files>
+        <input>dados/entrada.csv</input>
+        <output_base>resultados/experimento_{provedor}.csv</output_base>
+    </files>
+    <prompt>
+        <template><![CDATA[Aja como um professor da educação básica com domínio da BNCC (Base Nacional Comum Curricular). Crie um plano de aula sobre o tema '{tema}' para alunos do {ano} ano do ensino fundamental. O plano deve incluir os códigos de habilidades da BNCC relacionados ao conteúdo trabalhado, juntamente com seus respectivos descritores. Utilize apenas códigos reais da BNCC que sejam coerentes com o tema e o ano escolar. Gere o plano de forma organizada, sem necessidade de detalhamento excessivo.]]>
+        </template>
+    </prompt>
+</config>
