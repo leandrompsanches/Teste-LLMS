@@ -90,10 +90,10 @@ class BatchProcessor:
                             tentativas += 1
                             if tentativas < max_tentativas:
                                 tempo_espera = self.config.rate_limit_delay * 2
-                                print(f"⚠️ Alerta: Muitas solicitações enviadas (Rate Limit). Aguardando {tempo_espera}s para tentar de novo (Tentativa {tentativas}/{max_tentativas})...")
+                                print(f"Alerta: Muitas solicitações enviadas (Rate Limit). Aguardando {tempo_espera}s para tentar de novo (Tentativa {tentativas}/{max_tentativas})...")
                                 time.sleep(tempo_espera)
                             else:
-                                print("❌ Falha após várias tentativas. O erro será salvo no CSV.")
+                                print("Falha após várias tentativas. O erro será salvo no CSV.")
                         else:
                             break # Sai do loop se a resposta foi sucesso ou outro erro não relacionado a limite
 

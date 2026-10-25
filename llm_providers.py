@@ -9,7 +9,11 @@ from google.genai import types
 class LLMProvider(ABC):
     """
     Classe base abstrata para provedores de LLM.
+    
+    Nota de Arquitetura:
+    Parâmetros como `api_key` e `model_name` foram intencionalmente omitidos. Embora comuns hoje, os requisitos de inicialização podem variar em novas implementações (ex: URLs para endpoints dedicados ou modelos locais sem credenciais).
     """
+    
     @abstractmethod
     def generate_response(self, prompt: str) -> str:
         """
@@ -39,9 +43,6 @@ class OpenAIProvider(LLMProvider):
         self.model_name = model_name
 
     def generate_response(self, prompt: str) -> str:
-        """
-        Gera uma resposta utilizando a API da OpenAI.
-        """
         try:
             response = openai.ChatCompletion.create(
                 model=self.model_name,
@@ -69,9 +70,6 @@ class GeminiProvider(LLMProvider):
         self.config = types.GenerateContentConfig(temperature=0.0)
 
     def generate_response(self, prompt: str) -> str:
-        """
-        Gera uma resposta utilizando a API do Google Gemini.
-        """
         try:
             response = self.client.models.generate_content(
                 model=self.model_name,

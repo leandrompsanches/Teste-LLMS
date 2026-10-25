@@ -7,9 +7,6 @@ from llm_providers import OpenAIProvider, GeminiProvider
 from processor import BatchProcessor
 
 def main():
-    """
-    Função principal que inicializa as classes e inicia o processamento.
-    """
     try:
         # 1. Carrega as configurações do XML
         config = ConfigManager("config.xml")
