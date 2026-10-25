@@ -6,8 +6,9 @@ __pycache__/
 # Configurações com dados sensíveis
 config.xml
 
-# Resultados (mantém a pasta mas ignora os CSVs)
-resultados/*.csv
+# Pastas de dados e resultados (não versionar)
+# dados/  <- COMENTADO: agora versionamos a pasta dados
+resultados/
 !resultados/.gitkeep
 
 # Ambientes virtuais
